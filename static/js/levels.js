@@ -78,7 +78,7 @@ const LEVELS = [
         turtle: { x: 0, y: 0, dir: 90 },
         goals: [{ x: 2, y: 2 }],
         obstacles: [
-            { x: 1, y: 2 }, { x: 2, y: 1 }, { x: 3, y: 2 }, { x: 2, y: 3 }
+            { x: 1, y: 2 }, { x: 2, y: 1 }, { x: 3, y: 2 }
         ],
         instruction: "Expert : Le drapeau est encerclé, trouve l'ouverture !"
     },
