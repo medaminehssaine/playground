@@ -26,7 +26,19 @@ function startGame(mode) {
 
     // Find first level of selected mode
     currentLevelIndex = LEVELS.findIndex(l => l.type === mode);
+    populateLevelSelector(); // Populate dropdown
     loadLevel(currentLevelIndex);
+}
+
+function populateLevelSelector() {
+    const selector = document.getElementById('level-select');
+    selector.innerHTML = '';
+    LEVELS.forEach((level, index) => {
+        const option = document.createElement('option');
+        option.value = index;
+        option.text = `Niveau ${level.type} - Challenge ${level.id}`;
+        selector.appendChild(option);
+    });
 }
 
 function showLanding() {
@@ -46,6 +58,10 @@ function loadLevel(index) {
 
     currentLevelIndex = index;
     currentLevel = LEVELS[index];
+
+    // Update Selector
+    const selector = document.getElementById('level-select');
+    if (selector) selector.value = index;
 
     // Reset State
     turtleState = { ...currentLevel.turtle };

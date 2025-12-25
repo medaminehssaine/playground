@@ -35,6 +35,9 @@
         <header>
             <button class="back-btn" onclick="showLanding()">🏠 Accueil</button>
             <h2 id="level-title">Niveau X - Challenge Y</h2>
+            <select id="level-select" onchange="loadLevel(parseInt(this.value))" style="margin-left: 10px; padding: 5px; font-family: 'Nunito', sans-serif; border-radius: 5px; border: 2px solid #333;">
+                <!-- Populated by JS -->
+            </select>
             <div id="instruction-box">Mission: <span id="instruction-text">...</span></div>
         </header>
 
